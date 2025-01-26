@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stddef.h>
-#include "write_f32s.h"
+#include "write_s16s.h"
 
 bool write_s16s(const int16_t *const s16s, const size_t quantity, const size_t offset, uint8_t *const buffer, const size_t buffer_length)
 {
