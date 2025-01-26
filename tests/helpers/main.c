@@ -80,6 +80,19 @@ void assert_f32s(const float *const expected, const float *const actual, const s
   }
 }
 
+void assert_f64s(const double *const expected, const double *const actual, const size_t quantity, const char *const description)
+{
+  for (size_t index = 0; index < quantity; index++)
+  {
+    if (expected[index] != actual[index])
+    {
+      exit_code = 1;
+      fprintf(stderr, "FAIL - %s (%llu: %f != %f)\n", description, index, expected[index], actual[index]);
+      return;
+    }
+  }
+}
+
 int main(const int argc, const char *const *const argv)
 {
   (void)(argc);
