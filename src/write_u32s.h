@@ -14,7 +14,7 @@
  *               32-bit integers.
  * @param buffer The buffer to which to write the unsigned 32-bit integers.
  * @param buffer_length The length of the buffer to which to write the unsigned
- *                      32 bit integers, in bytes.
+ *                      32-bit integers, in bytes.
  * @return True when the operation succeeds.  False should the given integers
  *         not fit within the buffer.
  */
