@@ -1,6 +1,6 @@
-#ifndef WRITE_U8S_H
+#ifndef WRITE_U16S_H
 
-#define WRITE_U8S_H
+#define WRITE_U16S_H
 
 #include <stdbool.h>
 #include <stdint.h>
