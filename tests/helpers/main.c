@@ -54,6 +54,19 @@ void assert_u32s(const uint32_t *const expected, const uint32_t *const actual, c
   }
 }
 
+void assert_u64s(const uint64_t *const expected, const uint64_t *const actual, const size_t quantity, const char *const description)
+{
+  for (size_t index = 0; index < quantity; index++)
+  {
+    if (expected[index] != actual[index])
+    {
+      exit_code = 1;
+      fprintf(stderr, "FAIL - %s (%llu: %d != %d)\n", description, index, expected[index], actual[index]);
+      return;
+    }
+  }
+}
+
 int main(const int argc, const char *const *const argv)
 {
   (void)(argc);
