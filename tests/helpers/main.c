@@ -119,6 +119,19 @@ void assert_s16s(const int16_t *const expected, const int16_t *const actual, con
   }
 }
 
+void assert_s32s(const int32_t *const expected, const int32_t *const actual, const size_t quantity, const char *const description)
+{
+  for (size_t index = 0; index < quantity; index++)
+  {
+    if (expected[index] != actual[index])
+    {
+      exit_code = 1;
+      fprintf(stderr, "FAIL - %s (%llu: %d != %d)\n", description, index, expected[index], actual[index]);
+      return;
+    }
+  }
+}
+
 int main(const int argc, const char *const *const argv)
 {
   (void)(argc);
