@@ -22,7 +22,20 @@ void assert_u8s(const uint8_t *const expected, const uint8_t *const actual, cons
     if (expected[index] != actual[index])
     {
       exit_code = 1;
-      fprintf(stderr, "FAIL - %s\n", description);
+      fprintf(stderr, "FAIL - %s (%llu: %d != %d)\n", description, index, expected[index], actual[index]);
+      return;
+    }
+  }
+}
+
+void assert_u16s(const uint16_t *const expected, const uint16_t *const actual, const size_t quantity, const char *const description)
+{
+  for (size_t index = 0; index < quantity; index++)
+  {
+    if (expected[index] != actual[index])
+    {
+      exit_code = 1;
+      fprintf(stderr, "FAIL - %s (%llu: %d != %d)\n", description, index, expected[index], actual[index]);
       return;
     }
   }
