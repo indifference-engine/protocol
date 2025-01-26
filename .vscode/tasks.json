@@ -4,7 +4,7 @@
     {
       "label": "build and test",
       "type": "shell",
-      "command": "make",
+      "command": "make -j || make",
       "problemMatcher": [],
       "group": {
         "kind": "build",
