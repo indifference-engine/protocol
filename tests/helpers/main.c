@@ -61,7 +61,7 @@ void assert_u64s(const uint64_t *const expected, const uint64_t *const actual, c
     if (expected[index] != actual[index])
     {
       exit_code = 1;
-      fprintf(stderr, "FAIL - %s (%lu: %d != %d)\n", description, index, expected[index], actual[index]);
+      fprintf(stderr, "FAIL - %s (%lu: %llu != %llu)\n", description, index, expected[index], actual[index]);
       return;
     }
   }
