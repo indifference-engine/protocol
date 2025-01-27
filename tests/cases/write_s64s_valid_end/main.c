@@ -4,12 +4,12 @@
 
 void test()
 {
-  const uint64_t actual_s64s[] = {4020187612800344506, -4880169684781116218, 2107815140410919875};
+  const int64_t actual_s64s[] = {4020187612800344506, -4880169684781116218, 2107815140410919875};
   uint8_t actual_buffer[] = {0x08, 0xe5, 0x2b, 0x39, 0xcb, 0x1b, 0xf1, 0x87, 0x31, 0x09, 0xfe, 0x76, 0x70, 0xa6, 0xdf, 51, 0x8b, 0x00, 0x88, 0xa9, 0x72, 0x7c, 0x73, 0xc7, 0xf6, 0x52};
 
   assert(write_s64s(actual_s64s, 3, 2, actual_buffer, 26), "write_s64s valid_end");
 
-  const uint64_t expected_s64s[] = {4020187612800344506, -4880169684781116218, 2107815140410919875};
+  const int64_t expected_s64s[] = {4020187612800344506, -4880169684781116218, 2107815140410919875};
   assert_s64s(expected_s64s, actual_s64s, 3, "write_s64s valid_end s64s");
   uint8_t expected_buffer[] = {0x08, 0xe5, 0xba, 0xe1, 0x63, 0x7f, 0x55, 0x93, 0xca, 0x37, 0xc6, 0xd4, 0xfd, 0x26, 0x87, 0x27, 0x46, 0xbc, 0xc3, 0x0b, 0x62, 0xd8, 0xb3, 0x76, 0x40, 0x1d};
   assert_u8s(expected_buffer, actual_buffer, 26, "write_s64s valid_end buffer");
