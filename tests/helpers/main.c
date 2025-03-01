@@ -6,12 +6,17 @@
 
 static int exit_code = 0;
 
+void fail(const char *const description)
+{
+  exit_code = 1;
+  fprintf(stderr, "FAIL - %s\n", description);
+}
+
 void assert(const bool actual, const char *const description)
 {
   if (!actual)
   {
-    exit_code = 1;
-    fprintf(stderr, "FAIL - %s\n", description);
+    fail(description);
   }
 }
 
