@@ -11,6 +11,6 @@ void test()
 
   const uint8_t expected_u8s[] = {0x71, 0x51};
   assert_u8s(expected_u8s, actual_u8s, 2, "write_u8s invalid_1 u8s");
-  uint8_t expected_buffer[] = {0x08, 0xe5, 0x2b, 0x39, 0xcb, 0x1b};
+  const uint8_t expected_buffer[] = {0x08, 0xe5, 0x2b, 0x39, 0xcb, 0x1b};
   assert_u8s(expected_buffer, actual_buffer, 6, "write_u8s invalid_1 buffer");
 }
