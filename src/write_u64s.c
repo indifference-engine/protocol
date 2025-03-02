@@ -13,14 +13,14 @@ bool write_u64s(const uint64_t *const u64s, const size_t quantity, const size_t 
   {
     for (size_t index = 0; index < quantity; index++)
     {
-      buffer[offset + index * 8] = u64s[index] >> 56;
-      buffer[offset + index * 8 + 1] = (u64s[index] >> 48) & 255;
-      buffer[offset + index * 8 + 2] = (u64s[index] >> 40) & 255;
-      buffer[offset + index * 8 + 3] = (u64s[index] >> 32) & 255;
-      buffer[offset + index * 8 + 4] = (u64s[index] >> 24) & 255;
-      buffer[offset + index * 8 + 5] = (u64s[index] >> 16) & 255;
-      buffer[offset + index * 8 + 6] = (u64s[index] >> 8) & 255;
-      buffer[offset + index * 8 + 7] = u64s[index] & 255;
+      buffer[offset + index * 8] = u64s[index] & 255;
+      buffer[offset + index * 8 + 1] = (u64s[index] >> 8) & 255;
+      buffer[offset + index * 8 + 2] = (u64s[index] >> 16) & 255;
+      buffer[offset + index * 8 + 3] = (u64s[index] >> 24) & 255;
+      buffer[offset + index * 8 + 4] = (u64s[index] >> 32) & 255;
+      buffer[offset + index * 8 + 5] = (u64s[index] >> 40) & 255;
+      buffer[offset + index * 8 + 6] = (u64s[index] >> 48) & 255;
+      buffer[offset + index * 8 + 7] = u64s[index] >> 56;
     }
 
     return true;
